@@ -6,8 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <SetttingsViewControllerDelegate>
 
 
 @end

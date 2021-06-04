@@ -16,6 +16,7 @@
 		9CFAE18726685FC200D178CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFAE18626685FC200D178CD /* main.m */; };
 		9CFAE19126685FC200D178CD /* TipsterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFAE19026685FC200D178CD /* TipsterTests.m */; };
 		9CFAE19C26685FC300D178CD /* TipsterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFAE19B26685FC300D178CD /* TipsterUITests.m */; };
+		9CFAE1F226695EEC00D178CD /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFAE1F126695EEC00D178CD /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		9CFAE19726685FC300D178CD /* TipsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFAE19B26685FC300D178CD /* TipsterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipsterUITests.m; sourceTree = "<group>"; };
 		9CFAE19D26685FC300D178CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CFAE1F026695EEC00D178CD /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		9CFAE1F126695EEC00D178CD /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				9CFAE18226685FC200D178CD /* LaunchScreen.storyboard */,
 				9CFAE18526685FC200D178CD /* Info.plist */,
 				9CFAE18626685FC200D178CD /* main.m */,
+				9CFAE1F026695EEC00D178CD /* SettingsViewController.h */,
+				9CFAE1F126695EEC00D178CD /* SettingsViewController.m */,
 			);
 			path = Tipster;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			files = (
 				9CFAE17C26685FC100D178CD /* ViewController.m in Sources */,
 				9CFAE17626685FC100D178CD /* AppDelegate.m in Sources */,
+				9CFAE1F226695EEC00D178CD /* SettingsViewController.m in Sources */,
 				9CFAE18726685FC200D178CD /* main.m in Sources */,
 				9CFAE17926685FC100D178CD /* SceneDelegate.m in Sources */,
 			);
