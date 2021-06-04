@@ -9,6 +9,7 @@
 
 @interface SettingsViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *NewTipPercentageField;
+@property (weak, nonatomic) IBOutlet UIButton *ReverseButton;
 
 
 @end
@@ -17,13 +18,8 @@
 - (void)viewDidLoad; {
     [super viewDidLoad];
     self.NewTipPercentageField.text = 0;
-    NSUserDefaults *defaultss = [NSUserDefaults standardUserDefaults];
-    [defaultss setBool:NO forKey:@"default_tip_percentages"];
-    [defaultss synchronize];
+    self.ReverseButton.alpha = 0;
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    double doubleValue = [defaults doubleForKey:@"default_tip_percentage"];
-    doubleValue = 0;
     // Do any additional setup after loading the view.
 }
 - (IBAction)onButton:(id)sender {
@@ -31,30 +27,38 @@
 }
 
 - (IBAction)onEditing:(id)sender {
-//    SettingsViewController *settingsViewController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
-//    settingsViewController.delegate = self;
-//    [[self navigationController] pushViewController: settingsViewController animated:YES];
     double newTip = [self.NewTipPercentageField.text doubleValue];
     newTip = newTip * .01;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setDouble:newTip forKey:@"default_tip_percentage"];
-    [defaults synchronize];
-    
-//    NSUserDefaults *defaultss = [NSUserDefaults standardUserDefaults];
-    Boolean hasLoaded = [defaults doubleForKey:@"default_tip_percentages"];
-//    [defaults setBool:hasLoaded forKey:@"default_tip_percentage"];
-    hasLoaded = YES;
+    [defaults setDouble:newTip forKey:@"new_tip_percentage"];
     [defaults synchronize];
 
-//    NSNumber *doubleNumber = [NSNumber numberWithDouble:newTip];
-//    NSString *string = [doubleNumber stringValue];
-//    [self.delegate addItemViewController:self didFinishEnteringItem:string];
 }
 
 - (IBAction)onTap:(id)sender {
     [self.view endEditing:YES];
 }
+- (IBAction)onReverseButton:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setDouble:0.2 forKey:@"default_tip_percentage"];
+    [defaults synchronize];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
+@synthesize delegate;
+-(void)viewWillDisappear:(BOOL)animated
+{
+    NSString *itemToPassBack = @"default_tip_percentage";
+    [self.delegate addItemViewController:self didFinishEnteringItem:itemToPassBack];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [UIView animateWithDuration:0 animations:^{
+        self.ReverseButton.alpha = 0;
+    }];
+}
 /*
 #pragma mark - Navigation
 
